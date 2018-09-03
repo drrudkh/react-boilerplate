@@ -54,7 +54,7 @@ module.exports = config => {
         new ExtractTextWebpackPlugin({
           filename: "style.css",
           allChunks: true
-        })
+        }),
       ],
       module: {
         rules: [
@@ -64,19 +64,8 @@ module.exports = config => {
           },
           {
             test: /\.scss$/,
-            use: [
-              "style-loader",
-              {
-                loader: "typings-for-css-modules-loader",
-                options: {
-                  modules: true,
-                  namedExport: true,
-                  camelCase: true,
-                  localIdentName: '[name]__[local]___[hash:base64:5]'
-                }
-              },
-              "sass-loader"
-            ]
+            include: path.resolve(path.join(process.cwd(), "src/scss")),
+            use: ExtractTextWebpackPlugin.extract(["css-loader", "sass-loader"])
           }
         ]
       }

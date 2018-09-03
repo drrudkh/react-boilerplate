@@ -1,0 +1,14 @@
+.main-navigation {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  border: 2px solid red;
+  &.closed {
+    width: 5vw;
+    transition: 0.5s ease-in-out;
+  }
+  &.expanded {
+    width: 10vw;
+    transition: 0.5s ease-in-out;
+  }
+}
