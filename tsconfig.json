@@ -15,7 +15,13 @@
             "es2015",
             "es2017",
             "dom"
-        ]
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@components/*" : [
+                "src/components/*"
+            ]
+        }
     },
     "exclude": [
         "node_modules"

@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import CssModules from "react-css-modules";
-const style = require("./main.css");
+import styles from './main.scss';
 
-@CssModules(style)
+import Sidebar from "@components/Sidebar/Sidebar";
+
 class App extends React.Component {
   render() {
     return (
       <>
-        <h1 styleName="header">App Title</h1>
-        <h2 styleName="second-header">Second Header</h2>
+        <h1 className={styles.header}>App Title</h1>
+        <Sidebar />
       </>
     );
   }
