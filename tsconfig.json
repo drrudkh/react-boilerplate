@@ -1,29 +1,21 @@
-
 {
-    "compilerOptions": {
-        // "noImplicitAny": true,
-        "sourceMap": true,
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true,
-        "jsx": "react",
-        "module": "esnext",
-        "moduleResolution": "node",
-        "target": "es5",
-        "lib": [
-            "es2015",
-            "es2017",
-            "dom"
-        ],
-        "baseUrl": ".",
-        "paths": {
-            "@components/*" : [
-                "src/components/*"
-            ]
-        }
-    },
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    // "noImplicitAny": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es5",
+    "lib": ["es2015", "es2017", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@images/*": ["src/assets/images/*"]
+    }
+  },
+  "exclude": ["node_modules"]
 }

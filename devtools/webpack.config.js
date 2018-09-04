@@ -36,7 +36,8 @@ module.exports = config => {
         alias: {
           "@components": path.resolve(
             path.join(process.cwd(), "src/components")
-          )
+          ),
+          "@images": path.resolve(path.join(process.cwd(), "src/assets/images"))
         },
         extensions: [".js", ".json", ".ts", ".tsx"]
       },
@@ -54,7 +55,7 @@ module.exports = config => {
         new ExtractTextWebpackPlugin({
           filename: "style.css",
           allChunks: true
-        }),
+        })
       ],
       module: {
         rules: [
@@ -66,6 +67,18 @@ module.exports = config => {
             test: /\.scss$/,
             include: path.resolve(path.join(process.cwd(), "src/scss")),
             use: ExtractTextWebpackPlugin.extract(["css-loader", "sass-loader"])
+          },
+          {
+            test: /\.(png|jpg|svg)$/,
+            use: [
+              {
+                loader: "file-loader",
+                options: {
+                  limit: 8000, // Convert images < 8kb to base64 strings
+                  name: "images/[hash]-[name].[ext]"
+                }
+              }
+            ]
           }
         ]
       }
